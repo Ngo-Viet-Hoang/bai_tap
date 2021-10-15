@@ -1,27 +1,22 @@
-﻿namespace DemoT2009M.Models
+﻿using System;
+
+namespace DemoT2009M.Models
 {
     public class Student
     {
-        private string rollNumber;
-
-        public string GetRollNumber()
+        public string RollNumber { get; set; }
+        public string FullName { get; set; }
+        public DateTime Birthday { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public int StudentStatus Status { get; set; }
+        
+        public override string ToString()
         {
-            if (string.IsNullOrEmpty(rollNumber))
-            {
-                return "RollNumber has no value";
-            }
-
-            return rollNumber;
-        }
-
-        public void SetRollNumber(string rollNumber)
-        {
-            if (string.IsNullOrEmpty(rollNumber))
-            {
-                return;
-            }
-
-            this.rollNumber = rollNumber;
+            return $"Rollnumber {RollNumber}, Fullname {FullName}, Email {Email}, Phone {Phone}, Created At {CreatedAt}";
+           
         }
     }
 }
+        
