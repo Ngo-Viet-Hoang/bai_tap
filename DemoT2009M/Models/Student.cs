@@ -10,7 +10,17 @@ namespace DemoT2009M.Models
         public string Email { get; set; }
         public string Phone { get; set; }
         public DateTime CreatedAt { get; set; }
-        public int StudentStatus Status { get; set; }
+        public StudentStatus Status { get ; set; }
+
+        public bool IsNewStudent()
+        {
+            return false;
+        }
+
+        public bool IsDeactive()
+        {
+            return Status == StudentStatus.Deactive;
+        }
         
         public override string ToString()
         {
